@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{593CEB2C-70EF-4C0B-8F43-E808F59E562A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Tennis.Common</RootNamespace>
+    <AssemblyName>Tennis.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Player.cs" />
+    <Compile Include="Match.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="ScoreFormatter.cs" />
+    <Compile Include="Score.cs" />
+    <Compile Include="ScoringSystem.cs" />
+    <Compile Include="PointsProcessor.cs" />
+    <Compile Include="PointsReader.cs" />
+    <Compile Include="ScoreState\GameOverState.cs" />
+    <Compile Include="ScoreState\AdvantageScoringState.cs" />
+    <Compile Include="ScoreState\PointScoringState.cs" />
+    <Compile Include="ScoreState\DeuceScoringState.cs" />
+    <Compile Include="ScoreState\ScoreState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tennis.Contracts\Tennis.Contracts.csproj">
+      <Project>{bbe138d3-c97f-4e2e-b337-43890449c973}</Project>
+      <Name>Tennis.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
